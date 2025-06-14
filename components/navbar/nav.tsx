@@ -14,12 +14,13 @@ const Navbar = () => {
 	const pathname = usePathname();
 
 	const links: MenuLink[] = [
-		{ route: '/', label: 'Components', active: pathname === `/` },
+		{ route: '/', label: 'Home', active: pathname === `/` },
+		{ route: '/docs', label: 'Components', active: pathname === `/docs` },
 		{ route: '/blocks', label: 'Blocks', active: pathname === `/blocks` },
 	];
 
 	return (
-		<nav className='hidden sm:flex items-center'>
+		<nav className='hidden md:flex items-center'>
 			<ul className='flex items-center gap-0.5'>
 				{links.map((item) => (
 					<li key={item.route}>

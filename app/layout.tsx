@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { fontSans } from '@/lib/fonts';
 import { siteConfig } from '@/config/site';
 import { ThemeProvider } from '@/providers/theme-provider';
-import Header from '@/components/header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
 	title: {
@@ -28,16 +28,20 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en' suppressHydrationWarning>
-			<body className={cn(fontSans.variable, 'dark:bg-slate-900/90')}>
+		<html lang='en'	suppressHydrationWarning={true}>
+			<body
+				className={cn(fontSans.variable, 'dark:bg-slate-900/90')}
+			>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='dark'
 					enableSystem={false}
 				>
 					<div className='relative flex flex-col min-h-svh bg-background '>
-						<Header />
-						<main className='flex-1'>{children}</main>
+						<main className='flex-1'>
+							<div className='max-w-7xl mx-auto px-6'>{children}</div>
+						</main>
+						<Footer />
 					</div>
 				</ThemeProvider>
 			</body>
