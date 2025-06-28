@@ -28,10 +28,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'	suppressHydrationWarning={true}>
-			<body
-				className={cn(fontSans.variable, 'dark:bg-slate-900/90')}
-			>
+		<html lang='en' suppressHydrationWarning>
+			<body className={cn(fontSans.variable, 'dark:bg-slate-900/90')}>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='dark'
